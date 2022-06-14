@@ -1,0 +1,10 @@
+set FLASK_APP=app.py
+set FLASK_DEBUG=1
+set API_KEY=pk_75b568615f10451191750bf0413447f3
+flask run
+
+export API_KEY=pk_75b568615f10451191750bf0413447f3
+export' is not recognized as an internal or external command,
+operable program or batch file.
+
+

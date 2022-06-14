@@ -1,0 +1,8 @@
+flask
+mysql workbench
+Python 3.7.2
+MySQL Community Server and MySQL Workbench
+
+
+pip install flask
+pip install flask-mysqldb
