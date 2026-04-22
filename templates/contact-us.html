@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>OTS-Contact-Us</title>
+            <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+            <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+        </head>
+        <style>
+            *{
+            box-sizing: border-box;
+            font-family: 'Dosis', sans-serif;
+        }
+        .bg{
+    background: url("https://drive.google.com/uc?export=download&id=1wrqCsKAibFDb26apixp0zrXIBAK8kIgy") no-repeat center fixed;
+    background-size: cover;
+    color: #000;
+    text-align: center;
+    font-size: larger;
+}
+.header{
+    text-align: center;
+    width: max-content;
+    height: min-content;
+    margin: 1% auto;
+    background-image: linear-gradient(180deg, rgba(223, 154, 98, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    border: 0.5px solid rgba(223, 154, 98, 1);
+    border-radius: 30px;
+}
+.input{
+    text-align: center;
+    margin: 10px;
+    width: 250px;
+    height: 30px;
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 50px;
+}
+.button{
+    text-align: center;
+    margin: 10px;
+    background-color: rgba(223, 154, 98, 0.49);           
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+}
+        .grid{
+            display: grid;
+            grid-template-columns: auto;
+        }
+        .primary{
+    width: max-content;
+    height: max-content;
+    background-image: linear-gradient(180deg, rgba(223, 154, 98, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    margin: 5% auto;
+    padding: 5% auto;
+    border: 0.5px solid rgba(223, 154, 98, 0.9);
+    border-radius: 30px;
+}
+        .sticky{
+            position: sticky;
+            top: 0%;
+            backdrop-filter: blur(5px);
+        }
+        #fx:hover {
+            background-color: rgba(236, 183, 9, 0.9);
+        }
+        input[type="text"], textarea {
+            background-color : rgb(249, 247, 243);
+        }
+        input[type="password"], textarea {
+            background-color : rgb(249, 247, 243);
+        }
+        input[type="email"], textarea {
+            background-color : rgb(249, 247, 243);
+        }
+        textarea.input{
+            background-color : rgb(249, 247, 243);
+        }
+        </style>
+        <body style="margin: 0px 0px;" class="bg">
+            <div style="text-align: center;" class="header sticky"><h1>&emsp;&emsp;&emsp;Contact Us&emsp;&emsp;&emsp;</h1></div>
+            <br><br>
+            <form action="{{ url_for('contact') }}" method="POST" class="primary" style="margin-top: 0px; margin-bottom: 0px; padding: 1% 10%;">
+                <br><br>
+                <div class="grid">
+                <div>
+                    <label class="form-label" for="name">Name</label>
+                    <input class = "input" autocomplete="off"class="form-control" type="text" id="name" name="name">
+                    <br><br>
+                    <label class="form-label" for="subject">Subject</label>
+                    <input class="input" autocomplete="off" class="form-control" type="text" id="subject" name="subject">
+                    <label class="form-label" for="email">Email</label>
+                    <input class = "input" autocomplete="off" class="form-control" type="email" id="email" name="email">
+                    <br><br><br>
+                </div>
+                <div>
+            <textarea class = "input" placeholder = "Message" autocomplete="off" class="form-control" id="message" name="message"></textarea>
+                </div>
+            </div>
+        </div>
+        <input id = "fx" type="submit" class = "button" value="Send">
+            </div>
+            </form>
+        </body>
+    </html>
+    {% endblock %}

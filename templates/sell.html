@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+OTS-Register
+{% endblock %}
+
+
+{% block style %}
+
+.bg{
+    background: url("https://drive.google.com/uc?export=download&id=1NjwKPrqmUDk5Xo5Afa6yUYGFlKwFHjmX") no-repeat center fixed;
+    background-size: cover;
+    color: #000;
+    text-align: center;
+    font-size: larger;
+}
+.header{
+    text-align: center;
+    width: max-content;
+    height: min-content;
+    margin: 1% auto;
+    background-image: linear-gradient(180deg, rgba(80, 95, 107, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    border: 0.5px solid rgba(80, 95, 107, 1);
+    border-radius: 30px;
+}
+.button{
+    text-align: center;
+    margin: 10px;
+    background-color: rgba(80, 95, 107, 0.49);           
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+}
+.input{
+    text-align: center;
+    margin: 10px;
+    width: 250px;
+    height: 40px;
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 50px;
+}
+.primary{
+    width: max-content;
+    height: max-content;
+    background-image: linear-gradient(180deg, rgba(80, 95, 107, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    margin: 5% auto;
+    padding: 5% auto;
+    border: 0.5px solid rgba(80, 95, 107, 0.9);
+    border-radius: 30px;
+}
+
+
+{% endblock %}
+{% block content %}
+<div style="text-align: center;" class="header sticky"><h1>&emsp;&emsp;&emsp;Sell Stocks&emsp;&emsp;&emsp;</h1></div>
+<br><br>
+<form action="{{ url_for('sell') }}" method="POST" class="primary" style="margin-top: 0px; margin-bottom: 0px; padding: 1% 1%;">
+    <br><br>
+    <select class = "input" name ="symbol">
+        <option disabled selected value=""><strong>Symbol of the Stock</strong></option>
+        {% for symb in list_symbols %}
+            <option value="{{symb}}">{{symb}}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <input style="font-weight: bolder;" class = "input" autocomplete="off" autofocus class="form-control" name="shares" placeholder="Number of Shares" type="number">
+    <br><br><br>
+    <input style="font-weight: bolder;" id = "fx" type="submit" class = "button" value="Sell">
+</form> 
+{% endblock %}

@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OTS-Home</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+
+        
+        <style>
+            *{
+        will-change: transform;
+        box-sizing: border-box;
+        font-family: 'Dosis', sans-serif;
+        color: white;
+    }
+            img {
+  opacity: 0%;
+}
+body
+{
+    color: rgb(219, 186, 186);
+    /* font-family: 'Steelfish Rg', 'helvetica neue', */
+                    /* helvetica, arial, sans-serif; */
+                font-family: Calibri, 'Trebuchet MS', sans-serif;
+                /* background-image: url("https://unsplash.com/photos/kDFtulaOXag/download?force=true&w=1920"); */
+                /* opacity: 0.4; */
+                /* /* background-repeat: repeat-y; */
+                background-size: 40; 
+
+                /* background-image: transparent; */
+                font-size: 45px;
+}
+.w{
+                width: 100%;
+                text-align: center;
+            }
+          
+            h3 {
+                text-align: center;
+            }
+            footer {
+                text-align: center;
+                padding: 3px;
+                margin-top: 90%;
+                backdrop-filter: blur(5px);
+                color: rgb(85, 62, 62);
+            }
+            li
+{
+    list-style-type: none;
+    align-self: center;
+} 
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+
+  text-decoration: none;
+ }
+
+ul {
+  list-style-type: none;
+  /* margin: 0; */
+  padding: 30px;
+  margin-bottom: 32px; 
+  overflow: hidden;
+  background-color: #333;
+}
+
+li a:hover:active{
+  background-color: white;
+  color: black;
+  text-decoration: none;
+
+}
+
+li ul{
+    padding: 4px;
+    margin: 2px;
+    margin-bottom: 32px; 
+   text-align: center;
+   display: none;
+  position: absolute;
+}
+
+li:hover ul
+{
+  display : block;
+  block-size: auto;
+  background-color: black;
+  color: green;
+  height:auto;
+  width: fit-content;
+
+}
+li ul li{
+  clear:none;
+  border: 1pt;
+  margin: 3px; 
+  padding: 4px;
+  float: inherit;
+}
+.boot {
+        background-image: url(/home.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        /* background-color: rgb(164, 238, 238); */
+            background-size: contain;
+        font-size: 120px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: 'Steelfish Rg', 'helvetica neue',
+                    helvetica, arial, sans-serif;
+        font-weight: 800;
+        -webkit-font-smoothing: antialiased;
+    }
+    .bg{
+               /* margin-top: 60%; */
+                background: url("https://unsplash.com/photos/wcWN29NufMQ/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8c3RvbmtzfHwwfHx8fDE2MzUwOTY5NjA&force=true&w=1920") no-repeat center fixed;
+                background-size: cover;
+                 
+                background-position: absolute;
+                width: 100%;
+                color: #000;
+                text-align: center;
+                font-size: larger;
+            }
+            .fixed {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; }
+
+        </style>
+    </head>
+    <body class="loggedin bg">
+        <nav class="navtop" class="fixed">
+			<div>
+				<h1>Online Trading System</h1>     
+                <li>           
+                    <a  color: white; href="{{ url_for('quote') }}"><i class="fa fa-quote-left"></i>QUOTE</a>             
+                    </li>
+                    <li>             
+                    <a  color: white; href="{{ url_for('buy') }}"><i class="fa fa-shopping-cart"></i>BUY</a>              
+                   </li>
+                    <li>
+                    <a  color: white; href="{{ url_for('sell') }}"><i class='fas fa-handshake'></i>SELL</a>
+                   </li>  
+                   <li>             
+                    <a  color: white; href="{{ url_for('contact') }}"><i class="fa fa-user-circle"></i>CONTACT US</a>              
+                   </li>
+                      <li>
+                        <a   color: white; href="#" class= clickevent><i class="fas fa-user"></i>{{name}}</a>
+                        <ul>
+                            <li>                     
+                                <div>
+                                <a  color: white; href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+                                    </div>
+                                    <div>
+                                      <a  color: white; href="{{ url_for('dashboard') }}"><i class="fas fa-medal"></i>Dashboard</a>
+                                          </div>
+                                    <div>
+                                      <a  color: white; href="{{ url_for('history') }}"><i class="fa fa-history" aria-hidden="true"></i>History</a>
+                                          </div>
+                                    <div>
+                                <a  color: white; href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>logout</a>
+                                </div>                        
+                            </li>
+                        </ul>
+                      </li>        
+			</div>
+		</nav>
+    </body>
+</html>

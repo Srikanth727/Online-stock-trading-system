@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+{% block title %}OTS-Change-Password{% endblock %}
+
+{% block style%}
+
+
+.bg{
+    background: url("https://drive.google.com/uc?export=download&id=1hxY9yq6QIFVMe-O8JCksJ95bpZC2bUoR") no-repeat center fixed;
+    background-size: cover;
+    color: #000;
+    text-align: center;
+    font-size: larger;
+}
+.primary{
+    width: max-content;
+    height: max-content;
+    background-image: linear-gradient(180deg, rgba(223, 154, 98, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    margin: 5% auto;
+    padding: 5% auto;
+    border: 0.5px solid rgba(223, 154, 98, 0.9);
+    border-radius: 30px;
+}
+.header{
+    text-align: center;
+    width: max-content;
+    height: min-content;
+    margin: 1% auto;
+    background-image: linear-gradient(180deg, rgba(223, 154, 98, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    border: 0.5px solid rgba(223, 154, 98, 1);
+    border-radius: 30px;
+}
+form
+{
+    position: 
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.input{
+    text-align: center;
+    margin: 10px;
+    width: 250px;
+    height: 30px;
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 50px;
+}
+.button{
+    text-align: center;
+    margin: 10px;
+    background-color: rgba(223, 154, 98, 0.49);           
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+}
+.sticky{
+    position: sticky;
+    top: 0%;
+    backdrop-filter: blur(5px);
+}
+{% endblock %}
+{% block content %}
+<div class="grid">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div>
+    <div style="text-align: center;" class="header sticky"><h1 >&emsp;&emsp;&emsp;Change Password&emsp;&emsp;&emsp;</h1></div>
+    <br><div>
+        <form action = "{{ url_for('changepwd') }}" method="POST" autocomplete="off" class="primary" style="margin-top: 0px; margin-bottom: 0px; padding: 1% 1%;">
+            <br><br>
+            <label for="oldpwd">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input class="input" type="password" name="oldpwd" autofocus autocomplete="off"  placeholder="Old Password" id="oldpwd" required>
+            <br><br>
+            <label for="newpwd">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input class="input" type="password" name="newpwd" autocomplete="off" placeholder="New Password" id="newpwd" required>
+            <br><br>
+            <label for="renewpwd">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input class ="input" type="password" name="renewpwd" autocomplete="off" placeholder="Re-type your New Password" id="renewpwd" required>
+            <div class="msg">{{ msg }}</div>
+            <br><br><br>
+            <input id = "fx" type="submit" class = "button" value="Submit">			
+        </form>
+        <br><br> </div>
+</div>
+</div>
+
+{% endblock %}

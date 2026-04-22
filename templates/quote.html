@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+OTS-Stock-Quote
+{% endblock %}
+
+{% block style %}
+
+.bg{
+    
+    background: url("https://drive.google.com/uc?export=download&id=18lgc6tE9epbaPrRTUSOCA93YuhLiFeRk") no-repeat center fixed;
+    background-size: cover;
+    color: #000;
+    text-align: center;
+    font-size: larger;
+}
+.primary{
+    width: max-content;
+    height: max-content;
+    background-image: linear-gradient(180deg, rgba(131, 234, 241, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    margin: 5% auto;
+    padding: 5% auto;
+    border: 0.5px solid rgba(131, 234, 241, 0.9);
+    border-radius: 30px;
+}
+.header{
+    text-align: center;
+    width: max-content;
+    height: min-content;
+    margin: 1% auto;
+    background-image: linear-gradient(180deg, rgba(131, 234, 241, 0.9) 0%,
+        rgba(255, 255, 255, 0.8) 100%);
+    border: 0.5px solid rgba(131, 234, 241, 1);
+    border-radius: 30px;
+}
+
+
+.input{
+    text-align: center;
+    margin: 10px;
+    width: 250px;
+    height: 40px;
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 50px;
+}
+.button{
+    text-align: center;
+    margin: 10px;
+    background-color: rgba(108, 214, 145, 0.49);           
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+}
+{% endblock %}
+{% block content %}
+      <div style="text-align: center;" class="header sticky"><h1>&emsp;&emsp;&emsp;Stock Quote&emsp;&emsp;&emsp;</h1></div>
+		<br><br>
+		<form action="{{ url_for('quote') }}" method="POST" class="primary" style="margin-top: 0px; margin-bottom: 0px; padding: 1% 1%;">
+			<br><br>
+			<input class = "input" autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol of the Stock" type="text">
+			<br><br><br>
+			<input style="font-weight: bolder;" id = "fx" type="submit" class = "button" value="Check the cost">
+		</form>  
+        
+{% endblock %}
